@@ -1,5 +1,5 @@
 {
-  "name": "official",
+  "name": "ServerZY",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "ant-design-vue": "^1.7.8",
+    "axios": "^0.27.2",
     "core-js": "^3.6.5",
+    "element-ui": "^2.15.9",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -19,6 +22,10 @@
     "@vue/cli-service": "~4.5.17",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "postcss-pxtorem": "^6.0.0",
+    "terser-webpack-plugin": "^5.3.3",
+    "vue-qriously": "^1.1.1",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [
