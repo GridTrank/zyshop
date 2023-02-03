@@ -138,7 +138,8 @@ export default {
       let total = 0;
       for (let index = 0; index < this.tableData.length; index++) {
         const item = this.tableData[index];
-        total += item.totalprice * item.totalquantity;
+        total += item.totalprice
+        // total += item.totalprice * item.totalquantity;
       }
       return parseFloat((total).toFixed(2)) 
     },
@@ -165,7 +166,7 @@ export default {
       }
       let num=this.percentToValue(this.username.discount)
       total=this.accMul(total,num)
-      console.log(total);
+      console.log(12312313,total);
       return parseFloat((total).toFixed(2)) 
     },
     accMul(arg1, arg2) {
