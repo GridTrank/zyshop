@@ -23,55 +23,8 @@
       <div class="line"></div>
     </el-header>
     <!-- 右侧固定栏 -->
-    <div class="wapnone fk_service">
-      <ul>
-        <li class="fk_service_box fk_service_consult">
-          <div class="fk_service_consult_cont">
-            <span class="fk_service_triangle"></span>
-            <div class="fk_service_consult_cont_top">
-              <span class="fk_service_hint"> </span>
-              <span
-                class="fk_service_button"
-                onclick="window.open('https://wpa.qq.com/msgrd?v=3&uin=20838641&site=qq&menu=yes')"
-                >QQ联系</span
-              >
-              <span
-                class="fk_service_button"
-                onclick="window.open('https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=771692826@qq.com')"
-                >在线邮件</span
-              >
-            </div>
-            <!-- <span class="fk_service_phone"> 联系我们:18614983835 </span> -->
-          </div>
-        </li>
-
-        <!-- 不需要图标的注释或删除即可 -->
-        <!-- 联系我们 -->
-        <li class="fk_service_box fk_service_ax">
-          <div class="fk_service_ax_cont">
-            <span class="fk_service_triangle"></span>
-            联系我们:18614983835
-            <!-- <img src="../assets/iconP.png" alt="" /> -->
-          </div>
-        </li>
-
-        <li class="fk_service_box fk_service_ws">
-          <div class="fk_service_ws_cont">
-            <span class="fk_service_triangle"></span>
-            企业微信请扫下方二维码
-            <img id="qywxJpg" src="../../assets/微信联系/企业微信.jpg" alt="" />
-          </div>
-        </li>
-
-        <li class="fk_service_box fk_service_sd">
-          <div class="fk_service_sd_cont">
-            <span class="fk_service_triangle"></span>
-            联系客服请扫二维码
-            <img id="qywxJpg" src="../../assets/微信联系/私人微信.jpg" alt="" />
-          </div>
-        </li>
-      </ul>
-    </div>
+    <rightNav></rightNav>
+    
     <!-- 详细信息 -->
     <div>
       <el-main>
@@ -247,9 +200,10 @@
   
   <script>
 import tabbs from "../../views/tabbs.vue";
+import rightNav from '@/components/rightNav'
 export default {
   name: "Vsc1288H",
-  components: { tabbs },
+  components: { tabbs,rightNav },
   data() {
     return {
       tabdata: "",
@@ -898,7 +852,7 @@ export default {
   width: 260px;
   position: fixed;
   right: 20px;
-  z-index: 2000000;
+  z-index: 999;
   background: #f9f9f9;
 }
 .detailed {

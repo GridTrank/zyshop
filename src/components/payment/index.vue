@@ -174,6 +174,8 @@ export default {
   methods: {
     // 保存
     submitForm(formName) {
+      // this.$emit('toNext',1)
+      // return
       this.ruleForm.userids = this.username.id;
       this.$refs[formName].validate((valid) => {
         if (valid) {
@@ -183,6 +185,7 @@ export default {
               this.ddd=true
               this.$message.success("保存成功")
               this.queryData();
+              this.$emit('toNext',2)
             });
         } else {
           // this.$emit("show", this.ruleForm, false, this.judge);

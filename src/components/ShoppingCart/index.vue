@@ -21,9 +21,9 @@
           :height="tableData.length>5?650:''"
           border
         >
-          <!-- <el-table-column type="expand" width="0" align="right">
+          <el-table-column type="expand" align="right">
             <template slot-scope="props">
-              <div v-for="item in props.row.configuration" :key="username==null?item.id:item.zid">
+              <div v-for="item in props.row.configuration" :key="username==null?item.id:item.zid" >
                 <p style="font-weight:700">{{ item.classification }}</p>
                 <p
                   style="margin-left: 10px"
@@ -35,7 +35,7 @@
                 </p>
               </div>
             </template>
-          </el-table-column> -->
+          </el-table-column>
           <el-table-column label="商品">
             <template slot-scope="scope">
               <img style="width: 100px" :src="scope.row.url" alt="" srcset="" />
@@ -192,11 +192,23 @@ export default {
         return value
     },
     Out() {
-      this.$router.push("/");
+      this.$router.back();
     },
     expandRow(row) {
+      let index=null
+      if(this.expands.length>0){
+        index=this.expands.findIndex(el=>{
+          return row.zid==el
+        })
+      }
+      
+      if (this.expands.indexOf(row.zid) == -1) {
+          this.expands.push(row.zid);
+      }else{
+        this.expands.splice(index,1)
+      }
+      return
       if (this.username!=null) {
-        
         if (this.expands.indexOf(row.zid) < 0) {
           this.expands = [];
           this.expands.push(row.zid);
@@ -207,7 +219,7 @@ export default {
       }
       if (this.expands.indexOf(row.id) < 0) {
           this.expands = [];
-          this.expands.push(row.id);
+          
         } else {
           this.expands = [];
         }

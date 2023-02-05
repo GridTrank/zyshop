@@ -24,7 +24,7 @@
       ></el-step>
       <el-step title="付款方式"></el-step>
     </el-steps>
-    <receiving v-if="active == 1"  ref="receiving" @show="show2"></receiving>
+    <receiving v-if="active == 1"  ref="receiving" @show="show2" @toNext="toNext"></receiving>
     <invoice v-else-if="active == 2 && show == '1'" ref="invoice" :jue="jue" :address2="address" @plete="plate"></invoice>
     <method v-else-if="active == 3" ref="method"></method>
     <el-card class="box-card">
@@ -46,7 +46,7 @@ export default {
   },
   data() {
     return {
-      active: 1,
+      active: 3,
       show: 0,
       jump: false,
       // 地址信息
@@ -60,6 +60,9 @@ export default {
     this.pic=this.$route.query.pic
   },
   methods: {
+    toNext(val){
+      this.active=2
+    },
     next() {
       if (this.active == 1) {
         this.$refs.receiving.show();
