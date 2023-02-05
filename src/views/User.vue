@@ -6,9 +6,12 @@
         </div>
         <div class="user-wrap">
             <div class="user-left">
-                <p>个人信息</p>
-                <p>我的地址</p>
-                <p>我的收藏</p>
+                <p @click="$router.push('/User/Info')">个人信息</p>
+                <p @click="$router.push('/User/Address')">我的地址</p>
+                <p @click="$router.push('/User/Collection')">我的收藏</p>
+            </div>
+            <div class="user-right">
+                <router-view></router-view>
             </div>
         </div>
     </div>
@@ -45,13 +48,22 @@ export default {
         }
     }
     .user-wrap{
-        max-width: 60vw;
+        max-width: 50vw;
         margin: auto;
         margin-top: 20px;
+        display: flex;
+        align-items: baseline;
         .user-left{
+            margin-right: 100px;
             p{
                 cursor: pointer;
+                &:hover{
+                    color: #409eff;
+                }
             }
+        }
+        .user-right{
+            flex: 1;
         }
     }
 }

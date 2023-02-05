@@ -18,8 +18,10 @@
           :expand-row-keys="expands"
           :data="tableData"
           style="width: 100%"
+          :height="tableData.length>5?650:''"
+          border
         >
-          <el-table-column type="expand" width="0" align="right">
+          <!-- <el-table-column type="expand" width="0" align="right">
             <template slot-scope="props">
               <div v-for="item in props.row.configuration" :key="username==null?item.id:item.zid">
                 <p style="font-weight:700">{{ item.classification }}</p>
@@ -33,7 +35,7 @@
                 </p>
               </div>
             </template>
-          </el-table-column>
+          </el-table-column> -->
           <el-table-column label="商品">
             <template slot-scope="scope">
               <img style="width: 100px" :src="scope.row.url" alt="" srcset="" />

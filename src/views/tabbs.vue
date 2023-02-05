@@ -90,7 +90,7 @@ export default {
       this.tabdata = res;
     },
     toUser(){
-      this.$router.push({path:"/user"})
+      this.$router.push({path:"/User/info"})
     },
     // 跳转购物车
     shopp(){
